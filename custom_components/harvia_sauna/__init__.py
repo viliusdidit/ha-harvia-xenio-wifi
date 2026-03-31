@@ -606,7 +606,8 @@ class HarviaSauna:
 
 async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     """Setup de Harvia Sauna integratie."""
-    boto3.set_stream_logger('custom_components.harvia_sauna')
+    # boto3 stream logger removed — it adds a StreamHandler that
+    # bypasses HA log level filtering and floods the log output
 
     return True
 
